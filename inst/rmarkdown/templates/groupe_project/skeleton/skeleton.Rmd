@@ -1,0 +1,82 @@
+---
+title: "The title of your project"
+author: 
+    - name: John Doe[MSc, johndoe@example.org, test]
+    - Jane Doe[Spe, janedoe@example.org]
+email:
+    - johndoe@example.org
+    - janedoe@example.org
+date: "`r Sys.Date()`"
+testb: "hjghuh"
+params:
+    testc: 
+    author_picture:
+        - "johndoe.jpg"
+        - "janedoe.jpg"
+    testdeparam: "test"
+output:
+    html_document:
+        css: "main.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Group members
+
+`r paste0("![",params$author_picture[1],"](",params$author_picture[1],")")`{width=100px}
+`r paste0("![",params$author_picture[2],"](",params$author_picture[2],")")`{width=100px}
+
+
+## Adding an RMarkdown Template
+
+
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+sdfsdf
+
+
+```{r}
+params$author_picture
+
+```
+
+
+
+```{r}
+params$author_picture[2]
+
+```
+
+```{r}
+ paste0("![",
+        params$author_picture[1],
+                              "](",
+        params$author_picture[1],
+        ")")
+```
+
+```{r}
+params$letitre
+# get all the mete data
+#rmarkdown::yaml_front_matter("skeleton.rmd")
+```
+`r rmarkdown::metadata$title`
+
+`r rmarkdown::metadata$testb`
+
+`r rmarkdown::metadata$author`
+
+
+
+# author 1
+
+`r params$author_picture[1]`
+
+
+

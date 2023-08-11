@@ -1,0 +1,20 @@
+---
+title: "document title"
+author: "author name"
+short_title: "short"
+reference: 1
+output: "html_document"
+params:
+    name: "my name"
+meta_list:
+    meta: "meta 1"
+---
+
+test doc
+
+`r rmarkdown::metadata$short_title`
+
+`r params$name`
+
+`r rmarkdown::metadata$meta_list$meta`
+`r rmarkdown::metadata$title`

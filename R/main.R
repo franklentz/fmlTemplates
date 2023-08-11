@@ -20,7 +20,7 @@
 #'
 #' @examples
 #'
-#' insert_course("Introduction to Statistics", "Descriptive Statistics")
+#' test : insert_course("Introduction to Statistics", "Descriptive Statistics")
 
 #
 # You can learn more about package authoring with RStudio at:
@@ -47,7 +47,12 @@ insert_course <- function(title,
     warning("Parameters should be of length 1.")
   }
 
-  output <- trimws(paste(title, topic, sep = " - "))
+  switch (format,
+    "inline" = output <- trimws(paste(title, topic, sep = " - ")),
+    "h1" = output <- paste0("<h1>",trimws(paste(title, topic, sep = " - ")), "</h1>"),
+    output <- trimws(paste(title, topic, sep = " - "))
+  )
+
   print(output)
 }
 
